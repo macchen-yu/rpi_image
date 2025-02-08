@@ -29,5 +29,5 @@ bitbake core-image-minimal
 
 bitbake-layers save-build-conf ../poky-scarthgap/meta-raspberrypi  wire-sample
 
-TEMPLATECONF=`pwd`/poky-scarthgap/meta-raspberrypi/conf/templates/wire-sample source  poky-scarthgap/oe-init-build-env  test_build
+TEMPLATECONF=`pwd`/poky-scarthgap/meta-raspberrypi/conf/templates/wire-sample source  poky-scarthgap/oe-init-build-env  rpi4b_build
 
