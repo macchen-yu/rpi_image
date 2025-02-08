@@ -1,0 +1,33 @@
+sudo sh docker_install.sh 
+cd ~/RPI4
+
+git clone https://github.com/yoctoproject/poky.git  -b scarthgap  poky-scarthgap
+
+cd poky-scarthgap
+git clone  https://github.com/agherzan/meta-raspberrypi.git -b scarthgap
+git clone  https://github.com/openembedded/meta-openembedded.git -b scarthgap
+cd .. 
+
+TEMPLATECONF=../TEMPLATES/conf source  poky-scarthgap/oe-init-build-env test_build
+
+source  poky-scarthgap/oe-init-build-env  Rpi4b_build
+
+
+
+bitbake-layers add-layer ../poky-scarthgap/meta-openembedded/meta-oe
+bitbake-layers add-layer ../poky-scarthgap/meta-openembedded/meta-python
+bitbake-layers add-layer ../poky-scarthgap/meta-openembedded/meta-networking
+bitbake-layers add-layer ../poky-scarthgap/meta-openembedded/meta-multimedia
+bitbake-layers add-layer ../poky-scarthgap/meta-raspberrypi
+
+說明一下local.conf 怎麼設定的
+
+bitbake core-image-minimal
+
+
+
+
+bitbake-layers save-build-conf ../poky-scarthgap/meta-raspberrypi  wire-sample
+
+TEMPLATECONF=`pwd`/poky-scarthgap/meta-raspberrypi/conf/templates/wire-sample source  poky-scarthgap/oe-init-build-env  test_build
+
