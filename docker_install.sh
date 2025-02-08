@@ -36,6 +36,5 @@ docker run -itd -v `pwd`:$docker_workspace_path \
 docker exec -it $docker_container_name bash -c "
     cd $docker_workspace_path &&
     echo $PASSWD | sudo -S chown -R $USER:$USER $docker_workspace_path &&
-    git clone https://github.com/yoctoproject/poky.git -b scarthgap
     bash
 "
