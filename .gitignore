@@ -1,0 +1,12 @@
+*_build
+customrc
+*.sw?
+*.log
+*.lock
+.repo/
+sstate-cache/
+downloads/
+tmp/
+cache/
+*.dot
+pn-buildlist
