@@ -1,7 +1,7 @@
 ##########################################################
 # Define user configuration variables
-USER="mac"               # Username for the container
-PASSWD=0221                  # Password (0 is likely a placeholder, update as needed)
+USER="user"               # Username for the container
+PASSWD=0                  # Password (0 is likely a placeholder, update as needed)
 docker_images_name="rpi4_img:latest"  # Name and tag for the Docker image (lowercase only)
 docker_container_name="rpi4_image"    # Name for the Docker container (lowercase only)
 docker_workspace_path="/home/$USER/RPI4"  # Workspace path inside the container
