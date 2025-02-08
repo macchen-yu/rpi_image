@@ -26,6 +26,7 @@ docker build --build-arg USER=$USER  --build-arg PASSWD=$PASSWD \
 # Assign the container the specified name
 
 docker run -itd -v `pwd`:$docker_workspace_path \
+--network host \
 -w $docker_workspace_path --user $USER \
 --name $docker_container_name $docker_images_name
 

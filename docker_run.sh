@@ -12,5 +12,6 @@ docker_workspace_path="/home/$USER/RPI4"  # Workspace path inside the container
 # Assign the container the specified name
 
 docker run -id -v `pwd`:$docker_workspace_path \
+--network host \
 -w $docker_workspace_path --user $USER \
 --name $docker_container_name $docker_images_name
