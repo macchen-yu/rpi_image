@@ -3,7 +3,7 @@ customrc
 *.sw?
 *.log
 *.lock
-.repo/
+# .repo/
 sstate-cache/
 downloads/
 tmp/
