@@ -40,12 +40,32 @@ sudo dd if=./tmp/deploy/images/raspberrypi4-64/core-image-minimal-raspberrypi4-6
 RPI4/rpi4b_build/tmp/deploy/images/raspberrypi4-64/core-image-minimal-raspberrypi4-64.rootfs-20250208081932.rpi-sdimg
 
 
-可以查看DISTRO_FEATUREs 參數
-bitbake -e core-image-minimal  | grep -oP 'DISTRO_FEATURES=".*"'
-bitbake -e core-image-minimal  | grep  'DISTRO_FEATURES=".*"'
-
-
-bitbake  core-image-minimal -e | grep DISTRO_FEATURES=\"
+底下可以查看DISTRO_FEATUREs 最終修改的參數
 
 bitbake  core-image-minimal -e | grep ^DISTRO_FEATURES=
-^SOME_VAR=
+bitbake  core-image-minimal -e | grep ^IMAGE_INSTALL=
+
+
+
+
+
+bitbake-layers create-layer   ../poky-scarthgap/meta-custmerrpi 
+bitbake-layers add-layer    ../poky-scarthgap/meta-custmerrpi 
+
+bitbake-layers  remove-layer     ../poky-scarthgap/meta-custmerrpi 
+
+
+
+bitbake -c listtasks systemd
+ 
+bitbake core-image-minimal -c populate_sdk 構建SDK  可以透過主機端 開發軟體 並且編譯，再丟到嵌入式端做
+
+
+
+bitbake core-image-minimal -e | grep ':.*IMAGE_INSTALL*'
+
+
+
+bitbake core-image-minimal -e | grep -E 'IMAGE_INSTALL|^IMAGE_INSTALL'
+
+bitbake  core-image-minimal -e |grep -r "IMAGE_INSTALL" *
