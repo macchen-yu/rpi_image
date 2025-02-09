@@ -38,3 +38,14 @@ sudo dd if=./tmp/deploy/images/raspberrypi4-64/core-image-minimal-raspberrypi4-6
 
 
 RPI4/rpi4b_build/tmp/deploy/images/raspberrypi4-64/core-image-minimal-raspberrypi4-64.rootfs-20250208081932.rpi-sdimg
+
+
+可以查看DISTRO_FEATUREs 參數
+bitbake -e core-image-minimal  | grep -oP 'DISTRO_FEATURES=".*"'
+bitbake -e core-image-minimal  | grep  'DISTRO_FEATURES=".*"'
+
+
+bitbake  core-image-minimal -e | grep DISTRO_FEATURES=\"
+
+bitbake  core-image-minimal -e | grep ^DISTRO_FEATURES=
+^SOME_VAR=
