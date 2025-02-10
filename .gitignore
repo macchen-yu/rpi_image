@@ -1,4 +1,5 @@
 *_build
+poky_sdk/
 # customrc
 *.sw?
 *.log
