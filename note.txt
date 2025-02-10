@@ -60,7 +60,7 @@ bitbake -c listtasks systemd
  
 bitbake core-image-minimal -c populate_sdk 構建SDK  可以透過主機端 開發軟體 並且編譯，再丟到嵌入式端做
 
-
+bitbake core-image-minimal -c  populate_sdk_ext
 
 bitbake core-image-minimal -e | grep ':.*IMAGE_INSTALL*'
 
@@ -69,3 +69,8 @@ bitbake core-image-minimal -e | grep ':.*IMAGE_INSTALL*'
 bitbake core-image-minimal -e | grep -E 'IMAGE_INSTALL|^IMAGE_INSTALL'
 
 bitbake  core-image-minimal -e |grep -r "IMAGE_INSTALL" *
+
+
+sudo apt install qemu-system-arm  
+
+qemu-system-arm  tmp/deploy/images/raspberrypi4-64/*.wic  可以啟動qemu
