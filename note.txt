@@ -29,7 +29,7 @@ bitbake core-image-minimal
 
 bitbake-layers save-build-conf ../poky-scarthgap/meta-raspberrypi  wire-sample
 
-TEMPLATECONF=`pwd`/poky-scarthgap/meta-raspberrypi/conf/templates/wire-sample source  poky-scarthgap/oe-init-build-env  rpi4b_build
+TEMPLATECONF=`pwd`/poky-scarthgap/meta-raspberrypi/conf/templates/wire-sample source  poky-scarthgap/oe-init-build-env  Rpi4b_build
 
 sudo dd if=core-image-minimal-raspberrypi4-64.rootfs-20250208081932.rpi-sdimg of=/dev/sda status=progress
 
